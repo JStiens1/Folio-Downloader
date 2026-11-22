@@ -1,4 +1,4 @@
-Folio Downloader
+# Folio Downloader
 
 <p align="center"> <img src="FolioDownloader.png" alt="Folio Downloader icon" width="96"> </p>
 
@@ -7,9 +7,9 @@ Folio Downloader downloads complete register images from Portale Antenati (Itali
 ![Folio Downloader main window](docs/Folio_img1.png)
 ![Folio Downloader image viewing window](docs/Folio_img2.png)
 
-Features
+## Features
 
-Downloading
+### Downloading
 
 Paste an Antenati gallery or IIIF manifest URL, or a Matricula book URL, and download the whole register or just the pages you choose (1-10, 25, 40-50).
 Resumable downloads, with optional strict resume that re-checks existing files (SHA-256) and re-downloads damaged ones.
@@ -17,21 +17,21 @@ Queue, saved URLs, notes and history; a cover page / register preview before you
 Adjustable image size, parallel workers, delay between requests, and automatic retries.
 Descriptive file names or your own name template (for example {town}_{typology}_{year}_pg{index}).
 
-Cleaning up pages
+### Cleaning up pages
 
 Auto-contrast, sharpen, denoise, remove bleed-through, grayscale, auto white balance, auto-invert negatives, flatten background.
 Straighten tilted pages, crop borders, perspective correction, crop to the main page, trim edges, upscaling.
 Split two-page spreads at the gutter (or in the middle), saving name_left and name_right.
 Keep untouched originals alongside the processed pages.
 
-Output
+### Output
 
 Image folders, or a single PDF or CBZ (optionally split into volumes by page count or size, with blank pages skipped).
 Optional OCR to make the PDF searchable (needs Tesseract).
 Metadata embedded in each JPEG (source URL, archive, year, page), plus CITATION.txt and SHA256SUMS.txt.
 Smaller "copies for sharing".
 
-Image Viewer and Pop Out
+### Image Viewer and Pop Out
 
 Open any picture on your computer, adjust it and Save As… (your original is never overwritten).
 Preview every enhancement before downloading.
@@ -45,7 +45,7 @@ Run it. No installation is needed.
 
 The app can check this repository for newer releases from inside the program.
 
-From source
+### From source
 
 Requires Python 3.11 or newer (with Tkinter).
 
@@ -55,7 +55,7 @@ cd Folio-Downloader
 pip install typer requests rich python-slugify pillow
 python Folio_Downloader.py
 
-Optional extras:
+### Optional extras:
 
 Feature	What you need
 Matricula pages that need a browser	pip install selenium and Google Chrome
@@ -63,30 +63,30 @@ Searchable PDFs (OCR)	the Tesseract program and its language data
 
 Check the imports at the top of the script for the exact package list for your version.
 
-Usage
+### Usage
 Desktop app
 bash
 python Folio_Downloader.py
 
 Run with no arguments to open the window. Pick Antenati Downloader, Matricula Downloader or Image Viewer from the titles at the top, paste a URL, preview the cover and press Download. The built-in Instructions window explains every option.
 
-Command line
+### Command line
 bash
 python Folio_Downloader.py "<register-url>" [options]
 
-Examples:
+### Examples:
 
 bash
-# Whole register at the default size
+Whole register at the default size
 python Folio_Downloader.py "https://antenati.cultura.gov.it/detail-nominative/?s=..."
 
-# Pages 1-20 and 40-50, straightened and contrast-stretched, saved as a PDF
+Pages 1-20 and 40-50, straightened and contrast-stretched, saved as a PDF
 python Folio_Downloader.py "<url>" --pages "1-20, 40-50" --deskew --auto-contrast --compile pdf
 
-# See the plan without downloading
+See the plan without downloading
 python Folio_Downloader.py "<url>" --dry-run
 
-Useful options (run with --help for the complete list):
+### Useful options (run with --help for the complete list):
 
 Option	Meaning
 -s, --size	Image size in pixels (0 = full size)
@@ -108,15 +108,15 @@ Settings and files
 
 Settings and notes are stored in your home folder as .folio_downloader_prefs.json and .folio_downloader_notes.json.
 
-Responsible use
+### Responsible use
 
 Folio Downloader fetches pages from public archive websites. Please be considerate: keep the worker count modest, use the delay option on long downloads, and follow the terms of use and reuse conditions of Portale Antenati and Matricula Online. Folio Downloader is an independent project and is not affiliated with either site.
 
-Contributing
+### Contributing
 
 Bug reports and pull requests are welcome. When reporting a problem, please include the register URL (if it is public), the options you used, and the message shown in the app.
 
-License
+### License
 
 Folio Downloader is free software, licensed under the GNU General Public License v3.0. See the LICENSE file for the full text.
 
