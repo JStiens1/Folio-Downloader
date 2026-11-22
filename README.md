@@ -1,4 +1,5 @@
 Folio Downloader
+
 <p align="center"> <img src="FolioDownloader.png" alt="Folio Downloader icon" width="96"> </p>
 
 Folio Downloader downloads complete register images from Portale Antenati (Italian civil and parish records) and Matricula Online (church books), then helps you clean up, preview and package them: all from one desktop window, or from the command line.
